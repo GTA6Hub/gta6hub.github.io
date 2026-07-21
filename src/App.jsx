@@ -33,17 +33,30 @@ export default function App() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!email || !email.includes("@")) {
-      setStatus("error");
-      return;
-    }
-    // TODO: ligar ao Brevo aqui
-    console.log("Email registado:", email);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!email || !email.includes("@")) {
+    setStatus("error");
+    return;
+  }
+
+  try {
+    const formData = new FormData();
+    formData.append("EMAIL", email);
+    formData.append("email_address_check", "");
+    formData.append("locale", "en");
+
+    await fetch(
+      "https://8f57265f.sibforms.com/serve/MUIFABw1uUm8yw5aM0SBguNvVDWVAcPSKMbdw2fHYOpbi0bpbAtZuTvnjVUomzdWDuAXnGUu3GRs3HU9603o69FMa9Qv1AKGyj6m15gfASBUV8Tx2Xz8tg6BsRDPnlpPjQiabWXQkgSuyGNJDiQ7KHRnjm1N7Z8YNQz0hXhi2sQQCHKmGLvX-oyM-m1ri6E0CQ-ksYYHTIaQ5iUpJQ==",
+      { method: "POST", body: formData, mode: "no-cors" }
+    );
+
     setStatus("success");
     setEmail("");
-  };
+  } catch {
+    setStatus("error");
+  }
+};
 
   return (
     <div className="page">
