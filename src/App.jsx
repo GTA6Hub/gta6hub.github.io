@@ -284,7 +284,7 @@ function Contact() {
       <p>Have a tip, a leak, a question, or want to collaborate? We'd love to hear from you.</p>
       <h3>General inquiries</h3>
       <p>For general questions, suggestions, or feedback about the site, reach out via email:</p>
-      <p className="contact-email">📧 contact@gta6hub.github.io</p>
+      <p className="contact-email">📧 gtaivnj@gmail.com</p>
       <h3>Submit a tip or leak</h3>
       <p>If you have information about GTA VI that you'd like us to cover, send it our way. We review all submissions and credit sources where permitted.</p>
       <h3>Partnership & advertising</h3>
