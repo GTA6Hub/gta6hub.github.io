@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import "./App.css";
+import Calculator from "./Calculator.jsx";
 
 const LAUNCH_DATE = new Date("2026-11-19T00:00:00");
 
@@ -175,6 +176,7 @@ function Nav() {
       <Link to="/about" className={`nav-link${pathname === "/about" ? " active" : ""}`}>ABOUT</Link>
       <Link to="/contact" className={`nav-link${pathname === "/contact" ? " active" : ""}`}>CONTACT</Link>
       <Link to="/privacy" className={`nav-link${pathname === "/privacy" ? " active" : ""}`}>PRIVACY</Link>
+      <Link to="/calculator" className={`nav-link${pathname === "/calculator" ? " active" : ""}`}>CALCULATOR</Link>
     </nav>
   );
 }
@@ -337,6 +339,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/calculator" element={<Calculator />} />
         </Routes>
       </main>
       <footer className="site-footer">
